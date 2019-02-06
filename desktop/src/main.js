@@ -5,11 +5,14 @@ const { app, BrowserWindow, shell } = electron;
 const isDev = require('electron-is-dev');
 const contextMenu = require('electron-context-menu');
 
-const FIFTEEN_MINUTES = 900000;
-
-const checkForUpdates = require('./autoUpdate');
 const buildMenu = require('./menu');
 const CONFIG = require('./config');
+
+require('update-electron-app')({
+  repo: 'withspectrum/spectrum',
+  updateInterval: '15 minutes',
+  logger: require('electron-log')
+})
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -20,14 +23,6 @@ let mainWindow;
 const startUrl = isDev ? CONFIG.APP_DEV_URL : CONFIG.APP_REMOTE_URL;
 
 function createWindow() {
-  if (!isDev) {
-    // Check for updates on startup and then every 15 minutes
-    checkForUpdates();
-    setInterval(() => {
-      checkForUpdates();
-    }, FIFTEEN_MINUTES);
-  }
-
   let mainWindowState = windowStateKeeper({
     defaultWidth: CONFIG.WINDOW_DEFAULT_WIDTH,
     defaultHeight: CONFIG.WINDOW_DEFAULT_HEIGHT,

@@ -323,13 +323,6 @@ are-we-there-yet@~1.1.2:
     delegates "^1.0.0"
     readable-stream "^2.0.6"
 
-argparse@^1.0.7:
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/argparse/-/argparse-1.0.10.tgz#bcd6791ea5ae09725e17e5ad988134cd40b3d911"
-  integrity sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==
-  dependencies:
-    sprintf-js "~1.0.2"
-
 array-buffer-from-string@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/array-buffer-from-string/-/array-buffer-from-string-0.1.0.tgz#3b14351f86149d84efc612c5ada7ed85169d7b07"
@@ -441,14 +434,7 @@ block-stream@*:
   dependencies:
     inherits "~2.0.0"
 
-bluebird-lst@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/bluebird-lst/-/bluebird-lst-1.0.6.tgz#89bc4de0a357373605c8781f293f7b06d454f869"
-  integrity sha512-CBWFoPuUPpcvMUxfyr8DKdI5d4kjxFl1h39+VbKxP3KJWJHEsLtuT4pPLkjpxCGU6Ask21tvbnftWXdqIxYldQ==
-  dependencies:
-    bluebird "^3.5.2"
-
-bluebird@^3.1.1, bluebird@^3.3.4, bluebird@^3.5.0, bluebird@^3.5.2:
+bluebird@^3.1.1, bluebird@^3.3.4, bluebird@^3.5.0:
   version "3.5.3"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.3.tgz#7d01c6f9616c9a51ab0f8c549a79dfe6ec33efa7"
   integrity sha512-/qKPUQlaW1OyR51WeCPBvRnAlnZFUJkCSG5HzGnuIqhgyJtF+T94lFnn33eiazjRm2LAHVy2guNnaq48X9SJuw==
@@ -500,16 +486,6 @@ buffers@~0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/buffers/-/buffers-0.1.1.tgz#b24579c3bed4d6d396aeee6d9a8ae7f5482ab7bb"
   integrity sha1-skV5w77U1tOWru5tmorn9Ugqt7s=
-
-builder-util-runtime@~8.1.0:
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/builder-util-runtime/-/builder-util-runtime-8.1.0.tgz#dd7fca995d48ceee7580b4851ca057566c94601e"
-  integrity sha512-s1mlJ28mv+56Iebh6c9aXjVe11O3Z0cDTwAGeB0PCcUzHA37fDxGgS8ZGoYNMZP+rBHj21d/od1wuYofTVLaQg==
-  dependencies:
-    bluebird-lst "^1.0.6"
-    debug "^4.1.0"
-    fs-extra-p "^7.0.0"
-    sax "^1.2.4"
 
 builtin-modules@^1.0.0:
   version "1.1.1"
@@ -934,6 +910,11 @@ electron-installer-redhat@^1.0.0:
     word-wrap "^1.2.3"
     yargs "^12.0.5"
 
+electron-is-dev@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/electron-is-dev/-/electron-is-dev-0.3.0.tgz#14e6fda5c68e9e4ecbeff9ccf037cbd7c05c5afe"
+  integrity sha1-FOb9pcaOnk7L7/nM8DfL18BcWv4=
+
 electron-is-dev@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/electron-is-dev/-/electron-is-dev-1.0.1.tgz#6e0a184736fe7aea77d18210b0b0f6a02402c4bc"
@@ -1009,21 +990,6 @@ electron-squirrel-startup@^1.0.0:
   dependencies:
     debug "^2.2.0"
 
-electron-updater@^4.0.6:
-  version "4.0.6"
-  resolved "https://registry.yarnpkg.com/electron-updater/-/electron-updater-4.0.6.tgz#9c4f495ae0e80bf4425e3e1b801c5ed2ab933c2d"
-  integrity sha512-JPGLME6fxJcHG8hX7HWFl6Aew6iVm0DkcrENreKa5SUJCHG+uUaAhxDGDt+YGcNkyx1uJ6eBGMvFxDTLUv67pg==
-  dependencies:
-    bluebird-lst "^1.0.6"
-    builder-util-runtime "~8.1.0"
-    fs-extra-p "^7.0.0"
-    js-yaml "^3.12.0"
-    lazy-val "^1.0.3"
-    lodash.isequal "^4.5.0"
-    pako "^1.0.7"
-    semver "^5.6.0"
-    source-map-support "^0.5.9"
-
 electron-window-state@^5.0.3:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/electron-window-state/-/electron-window-state-5.0.3.tgz#4f36d09e3f953d87aff103bf010f460056050aa8"
@@ -1044,10 +1010,10 @@ electron-winstaller@^2.5.0:
     lodash.template "^4.2.2"
     temp "^0.8.3"
 
-electron@^3.0.13:
-  version "3.0.13"
-  resolved "https://registry.yarnpkg.com/electron/-/electron-3.0.13.tgz#7b065a3d130c6b6379dc78d49515e03f392c1303"
-  integrity sha512-tfx5jFgXhCmpe6oPjcesaRj7geHqQxrJdbpseanRzL9BbyYUtsj0HoxwPAUvCx4+52P6XryBwWTvne/1eBVf9Q==
+electron@3.1.3:
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-3.1.3.tgz#848fa0fc62d131978cde15ec04ce195a08dc4155"
+  integrity sha512-Y1TbV5py2O0br0JVYh+ew1cW4cIOOgRNRMzwTwWuZNMZ9fK/XLlqsbZr1GpYHdiN2yIU1koO+g4Cw8VuW86NXQ==
   dependencies:
     "@types/node" "^8.0.24"
     electron-download "^4.1.0"
@@ -1076,11 +1042,6 @@ escape-string-regexp@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
-
-esprima@^4.0.0:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/esprima/-/esprima-4.0.1.tgz#13b04cdb3e6c5d19df91ab6987a8695619b0aa71"
-  integrity sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==
 
 event-stream@3.3.4:
   version "3.3.4"
@@ -1256,14 +1217,6 @@ from@~0:
   resolved "https://registry.yarnpkg.com/from/-/from-0.1.7.tgz#83c60afc58b9c56997007ed1a768b3ab303a44fe"
   integrity sha1-g8YK/Fi5xWmXAH7Rp2izqzA6RP4=
 
-fs-extra-p@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/fs-extra-p/-/fs-extra-p-7.0.0.tgz#da9a72df71dc77fb938162025a5fc658713c98ab"
-  integrity sha512-5tg5jBOd0xIXjwj4PDnafOXL5TyPVzjxLby4DPKev53wurEXp7IsojBaD4Lj5M5w7jxw0pbkEU0fFEPmcKoMnA==
-  dependencies:
-    bluebird-lst "^1.0.6"
-    fs-extra "^7.0.0"
-
 fs-extra@0.26.7:
   version "0.26.7"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-0.26.7.tgz#9ae1fdd94897798edab76d0918cf42d0c3184fa9"
@@ -1430,6 +1383,13 @@ getpass@^0.1.1:
   integrity sha1-Xv+OPmhNVprkyysSgmBOi6YhSfo=
   dependencies:
     assert-plus "^1.0.0"
+
+github-url-to-object@^4.0.4:
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/github-url-to-object/-/github-url-to-object-4.0.4.tgz#a9797b7026e18d53b50b07f45b7e169b55fd90ee"
+  integrity sha512-1Ri1pR8XTfzLpbtPz5MlW/amGNdNReuExPsbF9rxLsBfO1GH9RtDBamhJikd0knMWq3RTTQDbTtw0GGvvEAJEA==
+  dependencies:
+    is-url "^1.1.0"
 
 glob-promise@^3.4.0:
   version "3.4.0"
@@ -1673,6 +1633,11 @@ is-typedarray@~1.0.0:
   resolved "https://registry.yarnpkg.com/is-typedarray/-/is-typedarray-1.0.0.tgz#e479c80858df0c1b11ddda6940f96011fcda4a9a"
   integrity sha1-5HnICFjfDBsR3dppQPlgEfzaSpo=
 
+is-url@^1.1.0, is-url@^1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/is-url/-/is-url-1.2.4.tgz#04a4df46d28c4cff3d73d01ff06abeb318a1aa52"
+  integrity sha512-ITvGim8FhRiYe4IQ5uHSkj7pVaPDrCTkNd3yq3cV7iZAcJdHTUMPMEHcqSOy9xZ9qFenQCvi+2wjH9a1nXqHww==
+
 is-utf8@^0.2.0:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/is-utf8/-/is-utf8-0.2.1.tgz#4b0da1442104d1b336340e80797e865cf39f7d72"
@@ -1714,14 +1679,6 @@ isstream@~0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
   integrity sha1-R+Y/evVa+m+S4VAOaQ64uFKcCZo=
-
-js-yaml@^3.12.0:
-  version "3.12.0"
-  resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.12.0.tgz#eaed656ec8344f10f527c6bfa1b6e2244de167d1"
-  integrity sha512-PIt2cnwmPfL4hKNwqeiuz4bKfnzHTBv6HyVgjahA6mPLwPDzjDWrplJBMjHUFxku/N3FlmrbyPclad+I+4mJ3A==
-  dependencies:
-    argparse "^1.0.7"
-    esprima "^4.0.0"
 
 jsbn@~0.1.0:
   version "0.1.1"
@@ -1778,11 +1735,6 @@ klaw@^1.0.0:
   integrity sha1-QIhDO0azsbolnXh4XY6W9zugJDk=
   optionalDependencies:
     graceful-fs "^4.1.9"
-
-lazy-val@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/lazy-val/-/lazy-val-1.0.3.tgz#bb97b200ef00801d94c317e29dc6ed39e31c5edc"
-  integrity sha512-pjCf3BYk+uv3ZcPzEVM0BFvO9Uw58TmlrU0oG5tTrr9Kcid3+kdKxapH8CjdYmVa2nO5wOoZn2rdvZx2PKj/xg==
 
 lcid@^2.0.0:
   version "2.0.0"
@@ -1842,11 +1794,6 @@ lodash.get@^4.0.0:
   version "4.4.2"
   resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
   integrity sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
-
-lodash.isequal@^4.5.0:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
-  integrity sha1-QVxEePK8wwEgwizhDtMib30+GOA=
 
 lodash.merge@^4.6.0:
   version "4.6.1"
@@ -2286,11 +2233,6 @@ p-try@^2.0.0:
   resolved "https://registry.yarnpkg.com/p-try/-/p-try-2.0.0.tgz#85080bb87c64688fa47996fe8f7dfbe8211760b1"
   integrity sha512-hMp0onDKIajHfIkdRk3P4CdCmErkYAxxDtP3Wx/4nZ3aGlau2VKh3mZpcuFkH27WQkL/3WBCPOktzA9ZOAnMQQ==
 
-pako@^1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/pako/-/pako-1.0.7.tgz#2473439021b57f1516c82f58be7275ad8ef1bb27"
-  integrity sha512-3HNK5tW4x8o5mO8RuHZp3Ydw9icZXx0RANAOMzlMzx7LVXhMJ4mo3MOBpzyd7r/+RUu8BmndP47LXT+vzjtWcQ==
-
 parse-author@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/parse-author/-/parse-author-2.0.0.tgz#d3460bf1ddd0dfaeed42da754242e65fb684a81f"
@@ -2705,11 +2647,6 @@ sanitize-filename@^1.6.0:
   dependencies:
     truncate-utf8-bytes "^1.0.0"
 
-sax@^1.2.4:
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
-  integrity sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==
-
 "semver@2 || 3 || 4 || 5", semver@^5.3.0, semver@^5.4.1, semver@^5.5.0, semver@^5.6.0:
   version "5.6.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.6.0.tgz#7e74256fbaa49c75aa7c7a205cc22799cac80004"
@@ -2771,14 +2708,6 @@ source-map-support@^0.5.4:
     buffer-from "^1.0.0"
     source-map "^0.6.0"
 
-source-map-support@^0.5.9:
-  version "0.5.9"
-  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.9.tgz#41bc953b2534267ea2d605bccfa7bfa3111ced5f"
-  integrity sha512-gR6Rw4MvUlYy83vP0vxoVNzM6t8MUXqNuRsuBmBHQDu1Fh6X015FrLdgoDKcNdkwGubozq0P4N0Q37UyFVr1EA==
-  dependencies:
-    buffer-from "^1.0.0"
-    source-map "^0.6.0"
-
 source-map@^0.6.0:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
@@ -2830,11 +2759,6 @@ split@0.3:
   integrity sha1-zQ7qXmOiEd//frDwkcQTPi0N0o8=
   dependencies:
     through "2"
-
-sprintf-js@~1.0.2:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
-  integrity sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
 
 sshpk@^1.7.0:
   version "1.15.2"
@@ -3101,6 +3025,16 @@ unused-filename@^1.0.0:
   dependencies:
     modify-filename "^1.1.0"
     path-exists "^3.0.0"
+
+update-electron-app@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/update-electron-app/-/update-electron-app-1.3.0.tgz#581e8f7cb8931de4884fd22e291bc558a5d91dd1"
+  integrity sha512-OXfcmeenpjMyzXmadZ6NqxnrpPpiLji0sLUpXkexfX97XM8Gnk4iLovk4TlK4N8dzlETWdm9klgMmo9HpRbK7Q==
+  dependencies:
+    electron-is-dev "^0.3.0"
+    github-url-to-object "^4.0.4"
+    is-url "^1.2.4"
+    ms "^2.1.1"
 
 uri-js@^4.2.2:
   version "4.2.2"
