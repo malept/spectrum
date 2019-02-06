@@ -6,6 +6,7 @@
     "name": "Space Program Inc.",
     "email": "hi@spectrum.chat"
   },
+  "license": "BSD-3-Clause",
   "repository": "https://github.com/withspectrum/spectrum",
   "version": "1.0.5",
   "main": "src/main.js",
@@ -14,86 +15,102 @@
     "electron-context-menu": "^0.10.1",
     "electron-is-dev": "^1.0.1",
     "electron-log": "^2.2.17",
+    "electron-squirrel-startup": "^1.0.0",
     "electron-updater": "^4.0.6",
     "electron-window-state": "^5.0.3"
   },
   "devDependencies": {
-    "electron": "^3.0.13",
-    "electron-builder": "^20.38.5",
-    "nodemon": "^1.18.9",
-    "rimraf": "^2.6.3"
-  },
-  "scripts": {
-    "dev": "nodemon --exec \"electron ./src/main.js\" -w ./src",
-    "prepackage": "rimraf release",
-    "package": "build",
-    "package:mac": "yarn run package --mac",
-    "package:linux": "yarn run package --linux",
-    "package:win": "yarn run package --win --x64",
-    "package:all": "yarn run package -mwl",
-    "package:test": "yarn run package --linux",
-    "release": "yarn run package:all --publish always"
-  },
-  "build": {
-    "productName": "Spectrum",
-    "appId": "chat.spectrum",
-    "copyright": "Copyright © 2018 Space Program Inc.",
-    "publish": [
-      {
-        "provider": "github",
-        "repo": "spectrum",
-        "owner": "withspectrum"
-      }
-    ],
-    "releaseInfo": {
-      "releaseName": "${name} Desktop App v${version}"
-    },
-    "files": [
-      "src/**/*",
-      "node_modules/**/*",
-      "resources/**/*",
-      "package.json"
-    ],
-    "directories": {
-      "buildResources": "resources",
-      "output": "release"
-    },
-    "mac": {
-      "category": "public.app-category.social-networking",
-      "target": "default",
-      "icon": "resources/icons/mac/icon.icns"
-    },
-    "dmg": {
-      "background": "resources/background.tiff",
-      "iconTextSize": 14,
-      "contents": [
-        {
-          "x": 158,
-          "y": 213,
-          "type": "file"
-        },
-        {
-          "x": 385,
-          "y": 213,
-          "type": "link",
-          "path": "/Applications"
-        }
-      ]
-    },
-    "linux": {
-      "icon": "resources/icons/png/icon-512x512.png",
-      "category": "Network",
-      "target": [
-        "AppImage",
-        "deb"
-      ]
-    },
-    "win": {
-      "target": "nsis",
-      "icon": "resources/icons/win/icon.ico"
-    }
+    "@electron-forge/cli": "6.0.0-beta.32",
+    "@electron-forge/maker-deb": "6.0.0-beta.32",
+    "@electron-forge/maker-dmg": "6.0.0-beta.32",
+    "@electron-forge/maker-rpm": "6.0.0-beta.32",
+    "@electron-forge/maker-squirrel": "6.0.0-beta.32",
+    "@electron-forge/maker-zip": "6.0.0-beta.32",
+    "electron": "3.1.3"
   },
   "resolutions": {
     "event-stream": "3.3.4"
+  },
+  "scripts": {
+    "package": "electron-forge package",
+    "package:mac": "yarn run make --platform darwin",
+    "package:linux": "yarn run make --platform linux",
+    "package:win": "yarn run make --platform win32 --arch x64",
+    "publish": "electron-forge publish",
+    "start": "electron-forge start",
+    "make": "electron-forge make"
+  },
+  "config": {
+    "forge": {
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "Spectrum"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {
+            "categories": [
+              "Network"
+            ],
+            "icon": "resources/icons/icon-512x512.png"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {
+            "categories": [
+              "Network"
+            ],
+            "icon": "resources/icons/icon-512x512.png"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-dmg",
+          "config": {
+            "background": "resources/background.tiff",
+            "contents": [
+              {
+                "type": "file",
+                "x": 158,
+                "y": 213
+              },
+              {
+                "path": "/Applications",
+                "type": "link",
+                "x": 385,
+                "y": 213
+              }
+            ],
+            "iconTextSize": 14
+          }
+        }
+      ],
+      "packagerConfig": {
+        "appBundleId": "chat.spectrum",
+        "appCategoryType": "public.app-category.social-networking",
+        "appCopyright": "Copyright © 2018 Space Program Inc.",
+        "icon": "resources/icons/icon"
+      },
+      "publishers": [
+        {
+          "config": {
+            "repository": {
+              "name": "spectrum",
+              "owner": "withspectrum"
+            }
+          },
+          "name": "@electron-forge/publisher-github"
+        }
+      ]
+    }
   }
 }

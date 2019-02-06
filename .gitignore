@@ -30,7 +30,7 @@ stats.json
 iris/.env
 api/.env
 test-results.json
-desktop/release
+desktop/out
 public/uploads
 cypress/screenshots/
 cypress/videos/
